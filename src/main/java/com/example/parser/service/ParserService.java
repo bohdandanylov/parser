@@ -46,24 +46,6 @@ public class ParserService {
         throw new IOException("Page is null.");
     }
 
-//    private List<WeatherLine> printValues(Elements values) {
-//
-//        List<WeatherLine> weatherLineList = new ArrayList<>();
-//
-//        String date = "";
-//        for (int i = 0; i < values.size(); i++) {
-//            Element valueLine = values.get(i);
-//            if (valueLine.toString().contains("wxo")) {
-//                date = valueLine.select(".wxo-th-bkg.table-date").text();
-//                continue;
-//            }
-//            WeatherLine line = new WeatherLine(date, valueLine.select("td"));
-//            weatherLineList.add(line);
-//            System.out.println(line);
-//        }
-//        return weatherLineList;
-//    }
-
     private List<WeatherLine> printValues(Elements values) {
 
         List<WeatherLine> weatherLineList = new ArrayList<>();
@@ -80,9 +62,9 @@ public class ParserService {
                 weatherLineList.add(line);
                 System.out.println(line);
             } catch (NumberFormatException e) {
-                // Обработка ошибки преобразования строки в число
+                // Handling a String to Number Error
                 e.printStackTrace();
-                // Или установка значений по умолчанию или другое действие
+                // Or setting default values
             }
         }
         return weatherLineList;
