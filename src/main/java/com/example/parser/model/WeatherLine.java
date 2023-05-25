@@ -39,7 +39,8 @@ public class WeatherLine {
         this.wind = siteDataLine.get(4).text();
         this.humidity = Integer.parseInt(siteDataLine.get(8).text());
         this.dewPoint = Integer.parseInt(siteDataLine.get(9).text());
-        this.pressure = Double.parseDouble(siteDataLine.get(11).text());
+        String pressureText = siteDataLine.get(11).text().trim();
+        this.pressure = Double.parseDouble(pressureText);
         this.visibility = Integer.parseInt(siteDataLine.get(13).text());
     }
 
